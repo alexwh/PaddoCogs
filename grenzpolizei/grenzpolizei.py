@@ -576,6 +576,9 @@ class Grenzpolizei:
                     embed = discord.Embed(color=self.blue)
                     embed.set_author(name='{1.display_name} left voice channel #{0.voice_channel}'.format(before, after), icon_url=after.avatar_url)
                     await self._send_message_to_channel(server, embed=embed)
+                elif before.voice.voice_channel != after.voice.voice_channel:                                                                                                              
+                    embed = discord.Embed(color=self.blue)                                                                                                                                 
+                    embed.set_author(name='{0.display_name} moved from voice channel #{0.voice_channel} to #{1.voice_channel}'.format(before, after), icon_url=after.avatar_url)
 
 
 def check_folder():
